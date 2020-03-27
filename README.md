@@ -16,9 +16,26 @@ New: https://zenodo.org/record/3250095
 ## Tools
 **Language** - Python 3\
 **VCS** - GitHub\
-**Board** - Trello\
-**Report writing** - HackMD\
+**Tasks** - Github issues\
+**Report writing** - Word\
 **Communication** - Telegram\
+
+## Agile Organization
+
+**Sprint planning**
+- Prepare sprint backlog
+- Distribute tasks
+
+**Daily standups**
+- What did you do yesterday?
+- What will you do today?
+- Are where any troubles?
+
+**Sprint review and retrospective**
+- Review completed/failed tasks
+- Write a report
+- Reflect on the past sprint
+
 
 ## Sprint results
 [Product backlog](https://docs.google.com/document/d/1iz3JAQmxBBnp4Jgo56VpsMRtAA--CgOeeKxTrhp4raY/edit?usp=sharing)\
