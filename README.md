@@ -12,17 +12,24 @@ wDTW algorithm from the following paper:
 https://www.aclweb.org/anthology/I17-1095.pdf 
 
 ## Dataset
-To test our implementation we use the PAN-12 Text Alignment dataset. If you 
-would like to test our implementation, you'll have to request access to the dataset
-by the following link:
-https://zenodo.org/record/3715852
+To test our implementation we use the PAN-11 dataset. 
+https://zenodo.org/record/3250095/files/pan-plagiarism-corpus-2011.part2.rar?download=1
+
+## Set up
+Before running the code you should make some set up.\
+Download and unpack above mentioned dataset to `data` folder\
+[Download  google word2vec](https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz)\
+[Download elmo embedding](https://tfhub.dev/google/elmo/2?tf-hub-format=compressed)
+
+## Run
+Run doc2vec_model.py 
 
 ## Tools
 **Language** - Python 3\
 **VCS** - GitHub\
 **Tasks** - Github issues\
 **Report writing** - Word\
-**Communication** - Telegram\
+**Communication** - Telegram
 
 ## Agile Organization
 
@@ -42,9 +49,10 @@ https://zenodo.org/record/3715852
 
 
 ## Sprint results
+[Documentation](https://github.com/arseninaanna/wDWT/tree/master/documentation)\
 [Product backlog](https://docs.google.com/document/d/1iz3JAQmxBBnp4Jgo56VpsMRtAA--CgOeeKxTrhp4raY/edit?usp=sharing)\
 [Sprint 0 presentation](https://docs.google.com/presentation/d/1b5qUYLmTZT_UoXc7Sxai594xzJpHSxvGnlNeCPJiVhc/edit?usp=sharing)\
-[Current and future sprint backlog](https://github.com/arseninaanna/wDWT/issues)
+[Current and future sprint backlog](https://github.com/arseninaanna/wDWT/issues)\
 [Past sprints backlog](https://github.com/arseninaanna/wDWT/issues?q=is%3Aissue+is%3Aclosed)
 
 ## Evaluation
