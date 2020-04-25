@@ -1,5 +1,3 @@
-<iframe width="476" height="302" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSHDLY6gFINy8nBgLJb81mLj9IkczivmAyML4zdw_dxAN6vNRxIOuSpkBkKgUA4ixQG_P8MFCwEXwbY/pubchart?oid=1985147838&amp;format=image"></iframe>
-
 # wDTW: word vector-based Dynamic Time Warping 
 
 The idea of this project - to implement wDTW distance that will help to detect text plagiarism between two pairs of documents.
@@ -46,7 +44,8 @@ https://zenodo.org/record/3715852
 ## Sprint results
 [Product backlog](https://docs.google.com/document/d/1iz3JAQmxBBnp4Jgo56VpsMRtAA--CgOeeKxTrhp4raY/edit?usp=sharing)\
 [Sprint 0 presentation](https://docs.google.com/presentation/d/1b5qUYLmTZT_UoXc7Sxai594xzJpHSxvGnlNeCPJiVhc/edit?usp=sharing)\
-[Sprints backlog](https://github.com/arseninaanna/wDWT/issues)
+[Current and future sprint backlog](https://github.com/arseninaanna/wDWT/issues)
+[Past sprints backlog](https://github.com/arseninaanna/wDWT/issues?q=is%3Aissue+is%3Aclosed)
 
 ## Evaluation
 ![Sprint Progress](https://docs.google.com/spreadsheets/d/e/2PACX-1vSHDLY6gFINy8nBgLJb81mLj9IkczivmAyML4zdw_dxAN6vNRxIOuSpkBkKgUA4ixQG_P8MFCwEXwbY/pubchart?oid=1985147838&amp;format=image)
