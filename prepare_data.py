@@ -11,14 +11,36 @@ def tokenize(text):
     return word_tokenize(tmp.lower())
 
 
-def get_documents(directory):
-    documents = []
-    for filename in os.listdir(directory):
-        if filename.endswith(".txt"):
-            f = open(directory + "/" + filename, encoding="utf-8-sig")
-            lines = f.read()
-            documents.append(lines)
-    return documents
+def read_pair(susp, src):
+    src_file = open("./data/pan12-text-alignment/src/" + src, "r")
+    src_data = src_file.readlines()
+    src_file.close()
+
+    susp_file = open("./data/pan12-text-alignment/susp/" + susp, "r")
+    susp_data = susp_file.readlines()
+    susp_file.close()
+
+    return tuple([src_data, susp_data])
+
+
+def get_documents():
+    no_plagiarism = []
+    plagiarism = []
+
+    N = 50
+    with open("./data/pan12-text-alignment/01_no_plagiarism/pairs", "r") as file:
+        for i in range(N):
+            line = next(file).strip()
+            susp, source = line.split()
+            no_plagiarism.append(read_pair(susp, source))
+
+    with open("./data/pan12-text-alignment/02_no_obfuscation/pairs", "r") as file:
+        for i in range(N):
+            line = next(file).strip()
+            susp, source = line.split()
+            plagiarism.append(read_pair(susp, source))
+
+    return no_plagiarism, plagiarism
 
 
 def doc2vec(documents, vector_size=15):
