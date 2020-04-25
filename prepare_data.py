@@ -2,6 +2,13 @@ import numpy as np
 import os
 from gensim.test.utils import common_texts
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
+import string
+from nltk.tokenize import sent_tokenize, word_tokenize
+
+
+def tokenize(text):
+    tmp = text.translate(str.maketrans('', '', string.punctuation))
+    return word_tokenize(tmp.lower())
 
 
 def get_documents(directory):
