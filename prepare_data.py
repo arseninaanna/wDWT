@@ -1,6 +1,4 @@
 import numpy as np
-import os
-from gensim.test.utils import common_texts
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 import string
 from nltk.tokenize import sent_tokenize, word_tokenize
@@ -23,11 +21,10 @@ def read_pair(susp, src):
     return tuple([src_data, susp_data])
 
 
-def get_documents():
+def get_documents(N=50):
     no_plagiarism = []
     plagiarism = []
 
-    N = 50
     with open("./data/pan12-text-alignment/01_no_plagiarism/pairs", "r") as file:
         for i in range(N):
             line = next(file).strip()
