@@ -11,11 +11,11 @@ def tokenize(text):
 
 def read_pair(susp, src):
     src_file = open("./data/pan12-text-alignment/src/" + src, "r")
-    src_data = src_file.readlines()
+    src_data = '\n'.join(src_file.readlines())
     src_file.close()
 
     susp_file = open("./data/pan12-text-alignment/susp/" + susp, "r")
-    susp_data = susp_file.readlines()
+    susp_data = '\n'.join(susp_file.readlines())
     susp_file.close()
 
     return tuple([src_data, susp_data])

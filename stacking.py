@@ -1,25 +1,28 @@
 from dtw import *
 from prepare_data import get_documents
 from doc2vec_model import apply_doc2vec
-model_thresholds = [15, 20, 25]
+model_thresholds = list()
 
 
 def calculate_accuracy(model, threshold=1.5, N_for_estimation=50):
     dataset = get_documents(N_for_estimation)
     answers = list()
     for not_copied_pair in dataset[0]:
-        answers.append(final_distance(model, *not_copied_pair) > threshold)
+        answers.append(final_distance(not_copied_pair[0], not_copied_pair[1], embedding=model) > threshold)
     for copied_pair in dataset[1]:
         answers.append(final_distance(model, *copied_pair) <= threshold)
     return [answers[i] != i > N_for_estimation for i in range(len(answers))].count(True)/(2*N_for_estimation)
 
 
-def find_optimal_threshold(model, iter_size=100, iters=5):
-    search_space = np.linspace(0, 1000, iters)
-    for i in range(iter_size):
+def find_optimal_threshold(model, iter_size=300, iters=25):
+    search_space = np.linspace(0, 1000, iter_size)
+    t_n = 0
+    for i in range(iters):
         maxx = -float('inf')
         ans = -1
         for j in search_space:
+            t_n += 1
+            print(t_n)
             accuracy = calculate_accuracy(model, threshold=j)
             if accuracy > maxx:
                 maxx = accuracy
@@ -44,3 +47,11 @@ def vote_model(text1, text2, thresholds=None):
     else:
         answer = False
     return answer
+
+
+if __name__ == "__main__":
+    for model in [embedding_word2vec, embedding_elmo]:
+        model_thresholds.append(find_optimal_threshold(model))
+        print(model_thresholds)
+
+

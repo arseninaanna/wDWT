@@ -18,7 +18,7 @@ def split_into_pars(text):
     return text.split('\n')
 
 
-def embedding_random(words, size=15):
+def embedding_random(words, size=150):
     # random embedding for testing
     answer = {word: np.random.rand(size) for word in words}
     return list(answer[word] for word in words)

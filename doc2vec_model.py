@@ -7,7 +7,8 @@ max_epochs = 20
 vec_size = 1000
 alpha = 0.025
 
-def train_doc2vec(pairs, max_epochs=20, vec_size=1000, alpha=0.025):
+
+def train_doc2vec(pairs, max_epochs=40, vec_size=1024, alpha=0.025):
     data = [x[0] for x in pairs]
     # doc2vec model training
     prepared_docs = []
@@ -76,12 +77,3 @@ if __name__ == "__main__":
         corpus = get_documents(500)
         model = train_doc2vec(corpus[0])
     assert model != None, 'model is broken'
-    # testing code:
-    # test_doc2vec(corpus)
-    '''
-    corp1 = "During the first conference, Lenin spoke to the delegates, lambasting the parliamentary path to socialism espoused by revisionist Marxists like Kautsky and repeating his calls for a violent overthrow of Europe's bourgeoisie governments."
-    corp2 = "Lenin's predicted world revolution did not materialise, as the Hungarian communist government was overthrown and the German Marxist uprisings suppressed."
-    corp3 = "Founded by Ken Morrison and Dave Thomas in the early 1970s, the company, then known as Ocean Sound, originally started as a North Vancouver-based music recording studio. Musicians such as Art Bergmann, Chilliwack, D.O.A and k.d. lang recorded albums and songs there."
-    print(
-    f"{model.docvecs.similarity_unseen_docs(model, tokenize(corp1), tokenize(corp2))} for close docs and {model.docvecs.similarity_unseen_docs(model, tokenize(corp1), tokenize(corp3))} for different")
-    '''
